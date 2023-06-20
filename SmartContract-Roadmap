@@ -1,0 +1,18 @@
+Desarrollo del Contrato Inteligente:
+  - Definir la funcionalidad del contrato inteligente
+  - Implementar la lógica para recibir pagos y vincular a la staking pool
+    - Recibir tokens en una wallet específica
+    - Calcular el equivalente en tokens basado en el valor en precio real del activo
+    - Realizar el staking de los tokens en la staking pool
+  - Implementar la función de retiro de tokens
+    - Permitir que los usuarios retiren sus tokens de la staking pool al finalizar el período de staking
+    - Transferir los tokens de la staking pool al usuario
+  - Documentar el contrato inteligente con comentarios explicativos
+
+- Integración con Metamask y Aurora Testnet
+  - Configurar la conexión a Aurora Testnet en Metamask
+  - Implementar la conexión de Metamask con la plataforma
+    - Permitir que los usuarios se conecten a la plataforma utilizando Metamask
+    - Verificar la conexión y autenticación del usuario
+  - Realizar pruebas de conexión y funcionalidad en la Aurora Testnet
+

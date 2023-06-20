@@ -1,0 +1,21 @@
+pragma solidity ^0.5.0;
+
+contract PaymentContract {
+    address payable public receiverAddress = 0x49973Af3724B56A48e462Ff7E4239B10fB7d119a; // Dirección de la billetera que recibirá los pagos
+    uint256 public paymentAmount;
+
+    event PaymentReceived(address indexed from, uint256 amount);
+
+    constructor() public {
+        paymentAmount = 0.0001 ether;
+    }
+
+    function makePayment() public payable {
+        require(msg.value >= paymentAmount, "Insufficient payment amount");
+        
+        // Sección para añadir funciones
+        
+        emit PaymentReceived(msg.sender, msg.value);
+        receiverAddress.transfer(msg.value); // Enviar el pago a la dirección del receptor
+    }
+}

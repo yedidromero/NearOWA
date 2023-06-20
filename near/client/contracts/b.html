@@ -1,0 +1,28 @@
+// Verificar si Metamask está instalado y conectado
+if (window.ethereum) {
+  const ethereum = window.ethereum;
+
+  // Solicitar permisos al usuario
+  ethereum
+    .request({ method: 'eth_requestAccounts' })
+    .then(async (accounts) => {
+      // Importar clave privada en Metamask
+      const privateKey = 'TU_CLAVE_PRIVADA'; // Reemplaza con tu clave privada
+      await ethereum.request({
+        method: 'wallet_importRawKey',
+        params: [privateKey],
+      });
+
+      const address = accounts[0]; // Obtener la dirección del usuario
+      console.log('Dirección de Metamask:', address);
+
+      // Realizar acciones adicionales con la dirección
+      // ...
+
+    })
+    .catch((error) => {
+      console.error('Error al solicitar permisos:', error);
+    });
+} else {
+  console.error('Metamask no detectado');
+}

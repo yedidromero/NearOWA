@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.4.0/dist/ethers.umd.min.js"></script>
+
+</head>
+<body>
+  <p><span id="web3_message"></span></p>
+  <h1>Nombre</h1>
+  <input id="input_nombre" /><br/>
+  <p>Correo</p>
+  <input id="input_correo" /><br/>
+  <p>Institucion</p>
+  <input id="input_institucion" /><br/>
+  <p>Enfoque</p>
+  <input id="input_enfoque" /><br/>
+  <button onclick="setLog()">Registrar con wallet</button>
+  <button onclick="a()">Registrar y crear wallet</button><br>
+
+  <p>Indice</p>
+  <input id="input_indice" /><br/>
+  <button onclick="getPersona()">Obtener registro</button><br/>
+
+  <p id="p_hello"></p>
+  <p id="key"></p>
+
+
+
+  <p><span id="web3_message">Loading web3...</span></p>
+<select id="mint_amount">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+<input type=button value="mint!" onclick="mint()">
+  <p id="nft_balance">...</p>
+  <p id="total_mint"></p>
+  <p id="price"></p>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.5/web3.min.js"></script>
+  <script type="text/javascript" src="src/utils.js"></script>
+  <script type="text/javascript" src ="src/index.js"></script>
+
+</body>
+</html>

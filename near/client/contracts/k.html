@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Importar dirección en MetaMask desde JSON</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.4.0/dist/ethers.umd.min.js"></script>
+
+</head>
+<body>
+  <button onclick="importarDireccion()">Importar Dirección en MetaMask</button>
+
+  <script>
+    async function importarDireccion() {
+      try {
+        // Leer el archivo JSON con la clave privada
+        const response = await fetch('key.json');
+        const data = await response.json();
+        const privateKey = data.privateKey;
+
+        // Importar la dirección en MetaMask
+        await ethereum.request({
+          method: 'wallet_importRawKey',
+          params: [privateKey]
+        });
+
+        console.log('Dirección importada correctamente en MetaMask');
+      } catch (error) {
+        console.error('Error al importar la dirección en MetaMask:', error);
+      }
+    }
+  </script>
+</body>
+</html>
